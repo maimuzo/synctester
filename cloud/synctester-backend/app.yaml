@@ -1,0 +1,61 @@
+application: maimuzo-py
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image/x-icon
+
+- url: /media
+  static_dir: media
+
+- url: /_media
+  static_dir: kay/media
+
+- url: /_kay/.*
+  script: kay/main.py
+  login: admin
+
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  login: admin
+
+- url: /_ah/queue/deferred
+  script: kay/main.py
+  login: admin
+
+- url: /.*
+  script: kay/main.py
+
+skip_files: |
+  ^(.*/)?(
+  (_backup/.*)|
+  (app\.yaml)|
+  (app\.yml)|
+  (index\.yaml)|
+  (index\.yml)|
+  (#.*#)|
+  (.*~)|
+  (.*\.py[co])|
+  (.*\.po)|
+  (.*\.pot)|
+  (\..*)|
+  (app\.yaml\.sample)|
+  (index\.yaml\.sample)|
+  (cron\.yaml\.sample)|
+  (manage\.py)|
+  (^[^\/]+\/tests\.py$)|
+  (^[^\/]+\/tests\/.*$)|
+  (TODO)|
+  (TODO\.pdf)|
+  (README)|
+  (README\.pdf)|
+  (LICENSE)|
+  (docs\/.*)|
+  (kay\/management\/.*)|
+  (kay\/lib\/babel\/localedata\/.*)|
+  )$
+

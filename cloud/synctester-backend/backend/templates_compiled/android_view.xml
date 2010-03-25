@@ -1,0 +1,15 @@
+from __future__ import division
+from jinja2.runtime import LoopContext, TemplateReference, Macro, Markup, TemplateRuntimeError, missing, concat, escape, markup_join, unicode_join, to_string, TemplateNotFound
+name = '/android_view.xml'
+
+def root(context, environment=environment):
+    l_android = context.resolve('android')
+    if 0: yield None
+    yield u'<?xml version="1.0" encoding="UTF-8"?>\n<item>\n    <tel>%s</tel>\n    <devid>%s</devid>\n    <sim>%s</sim>\n</item>\n' % (
+        escape(environment.getattr(l_android, 'tel')), 
+        escape(environment.getattr(l_android, 'devId')), 
+        escape(environment.getattr(l_android, 'simSerial')), 
+    )
+
+blocks = {}
+debug_info = '1=8&3=9&4=10&5=11'

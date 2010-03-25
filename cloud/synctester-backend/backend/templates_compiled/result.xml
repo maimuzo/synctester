@@ -1,0 +1,15 @@
+from __future__ import division
+from jinja2.runtime import LoopContext, TemplateReference, Macro, Markup, TemplateRuntimeError, missing, concat, escape, markup_join, unicode_join, to_string, TemplateNotFound
+name = '/result.xml'
+
+def root(context, environment=environment):
+    l_state = context.resolve('state')
+    l_message = context.resolve('message')
+    if 0: yield None
+    yield u'<?xml version="1.0" encoding="UTF-8"?>\n<response>\n    <state>%s</state>\n    <message>%s</message>\n</response>\n' % (
+        escape(l_state), 
+        escape(l_message), 
+    )
+
+blocks = {}
+debug_info = '1=9&3=10&4=11'

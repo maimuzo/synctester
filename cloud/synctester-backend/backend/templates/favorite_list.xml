@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+    {% for entity in entities %}
+    <entity>
+        <_id>{{ entity.id }}</_id>
+        <url>{{ entity.url }}</url>
+        <title>{{ entity.title }}</title>
+        <client_updated_at>{{ entity.client_updated_at }}</client_updated_at>
+    </entity>
+    {% endfor %}
+</entities>
+

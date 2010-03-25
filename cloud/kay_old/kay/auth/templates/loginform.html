@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{_('Kay Login')}}{% endblock title %}
+{%- block bodytag %}<body onload="document.forms[0].user_name.focus();">{% endblock bodytag -%}
+{% block content %}
+    <div id="message">
+      {{ message }}
+    </div>
+    <div id="loginform">
+      {% call form() %}
+      <fieldset>
+        <legend>{{ _('Kay Login Form') }}</legend>
+        {% for field in form %}
+        <p>
+          {{ field.errors()|safe }}
+          {{ field.label()|safe }}
+          {{ field.render()|safe }}
+        </p>
+        {% endfor %}
+        {{ form.default_actions(label=_("Login"))|safe }}
+      </fieldset>
+      {% endcall %}
+    </div>
+    <a href="{{ url_for('auth/request_reset_password') }}">{{_('Forgot password?')}}</a>
+{% endblock content %}

@@ -1,0 +1,9 @@
+#Thu Mar 25 11:18:12 JST 2010
+eclipse.preferences.version=1
+encoding//backend/__init__.py=utf-8
+encoding//backend/androiduser_handler.py=utf-8
+encoding//backend/favorite_handler.py=utf-8
+encoding//backend/models.py=utf-8
+encoding//backend/urls.py=utf-8
+encoding//backend/views.py=utf-8
+encoding/settings.py=utf-8

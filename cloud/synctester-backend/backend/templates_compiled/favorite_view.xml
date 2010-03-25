@@ -1,0 +1,31 @@
+from __future__ import division
+from jinja2.runtime import LoopContext, TemplateReference, Macro, Markup, TemplateRuntimeError, missing, concat, escape, markup_join, unicode_join, to_string, TemplateNotFound
+name = '/favorite_view.xml'
+
+def root(context, environment=environment):
+    l_state = context.resolve('state')
+    l_message = context.resolve('message')
+    l_favorite = context.resolve('favorite')
+    if 0: yield None
+    yield u'<?xml version="1.0" encoding="UTF-8"?>\n<entity>\n    <_id>%s</_id>\n    <url>%s</url>\n    <title>%s</title>\n    <updated_at>%s</updated_at>\n    <client_updated_at>%s</client_updated_at>\n    ' % (
+        escape(environment.getattr(l_favorite, 'id')), 
+        escape(environment.getattr(l_favorite, 'url')), 
+        escape(environment.getattr(l_favorite, 'title')), 
+        escape(environment.getattr(l_favorite, 'updated_at')), 
+        escape(environment.getattr(l_favorite, 'client_updated_at')), 
+    )
+    if l_state:
+        if 0: yield None
+        yield u'\n    <state>%s</state>\n    ' % (
+            escape(l_state), 
+        )
+    yield u'\n    '
+    if l_message:
+        if 0: yield None
+        yield u'\n    <message>%s</message>\n    ' % (
+            escape(l_message), 
+        )
+    yield u'\n</entity>\n'
+
+blocks = {}
+debug_info = '1=10&3=11&4=12&5=13&6=14&7=15&8=17&9=20&10=22&11=23&12=26&13=28'

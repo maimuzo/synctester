@@ -1,0 +1,13 @@
+* Werkzeug
+  changeset 823:c478c8c85fd3
+  with a patch: http://dev.pocoo.org/projects/werkzeug/ticket/385
+
+* Jinja2
+  changeset 647:c72399ed7fdc
+
+* babel
+  Version-0.9.4
+  with a small patch: babel-false-possitive-fuzzy-fix.diff
+
+* simplejson
+  simplejson-2.0.9

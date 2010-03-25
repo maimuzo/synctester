@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+    <tel>{{ android.tel }}</tel>
+    <devid>{{ android.devId }}</devid>
+    <sim>{{ android.simSerial }}</sim>
+</item>
+

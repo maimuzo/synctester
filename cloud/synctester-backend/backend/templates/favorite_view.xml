@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity>
+    <_id>{{ favorite.id }}</_id>
+    <url>{{ favorite.url }}</url>
+    <title>{{ favorite.title }}</title>
+    <updated_at>{{ favorite.updated_at }}</updated_at>
+    <client_updated_at>{{ favorite.client_updated_at }}</client_updated_at>
+    {% if state %}
+    <state>{{ state }}</state>
+    {% endif %}
+    {% if message %}
+    <message>{{ message }}</message>
+    {% endif %}
+</entity>
+
